@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
   container: {
     minHeight: 48,
     justifyContent: 'center',
-    maxWidth: 248,
+    maxWidth: 280,
     minWidth: 124,
   },
   title: {

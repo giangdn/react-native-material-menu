@@ -16,7 +16,7 @@ const Touchable = Platform.select({
   default: TouchableHighlight,
 });
 
-function MenuItem({
+function MenuItemText({
   children,
   disabled,
   disabledTextColor,
@@ -38,12 +38,24 @@ function MenuItem({
       {...touchableProps}
       {...props}
     >
-      <View style={[styles.container, style]}>{children}</View>
+      <View style={[styles.container, style]}>
+        <Text
+          ellipsizeMode={ellipsizeMode}
+          numberOfLines={1}
+          style={[
+            styles.title,
+            disabled && { color: disabledTextColor },
+            textStyle,
+          ]}
+        >
+          {children}
+        </Text>
+      </View>
     </Touchable>
   );
 }
 
-MenuItem.propTypes = {
+MenuItemText.propTypes = {
   children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
   disabledTextColor: PropTypes.string,
@@ -54,7 +66,7 @@ MenuItem.propTypes = {
   underlayColor: TouchableHighlight.propTypes.underlayColor,
 };
 
-MenuItem.defaultProps = {
+MenuItemText.defaultProps = {
   disabled: false,
   disabledTextColor: '#bdbdbd',
   ellipsizeMode: Platform.OS === 'ios' ? 'clip' : 'tail',
@@ -67,7 +79,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     maxWidth: 248,
     minWidth: 124,
-    flex: 1,
   },
   title: {
     fontSize: 14,
@@ -77,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MenuItem;
+export default MenuItemText;

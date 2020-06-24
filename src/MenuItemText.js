@@ -9,6 +9,7 @@ import {
   TouchableHighlight,
   TouchableNativeFeedback,
   View,
+  ViewPropTypes,
 } from 'react-native';
 
 const Touchable = Platform.select({
@@ -61,9 +62,9 @@ MenuItemText.propTypes = {
   disabledTextColor: PropTypes.string,
   ellipsizeMode: PropTypes.string,
   onPress: PropTypes.func,
-  style: TouchableHighlight.propTypes.style,
-  textStyle: Text.propTypes.style,
-  underlayColor: TouchableHighlight.propTypes.underlayColor,
+  style: ViewPropTypes.style,
+  textStyle: ViewPropTypes.style,
+  underlayColor: ViewPropTypes.underlayColor,
 };
 
 MenuItemText.defaultProps = {

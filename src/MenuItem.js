@@ -52,7 +52,7 @@ MenuItem.propTypes = {
   onPress: PropTypes.func,
   style: ViewPropTypes.style,
   textStyle: ViewPropTypes.style,
-  underlayColor: TouchableHighlight.propTypes.underlayColor,
+  underlayColor: ViewPropTypes.underlayColor,
 };
 
 MenuItem.defaultProps = {
